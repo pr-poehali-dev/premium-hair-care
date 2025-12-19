@@ -6,6 +6,7 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     setActiveSection(id);
@@ -118,14 +119,84 @@ const Index = () => {
                 Контакты
               </button>
             </div>
-            <Button
-              onClick={() => scrollToSection('contacts')}
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              Записаться
-            </Button>
+            <div className="flex items-center gap-4">
+              <Button
+                onClick={() => scrollToSection('contacts')}
+                className="hidden md:block bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                Записаться
+              </Button>
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden text-foreground"
+                aria-label="Toggle menu"
+              >
+                <Icon name={mobileMenuOpen ? 'X' : 'Menu'} size={28} />
+              </button>
+            </div>
           </div>
         </div>
+        
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-border animate-fade-in">
+            <div className="container mx-auto px-4 py-4 space-y-4">
+              <button
+                onClick={() => {
+                  scrollToSection('home');
+                  setMobileMenuOpen(false);
+                }}
+                className="block w-full text-left py-3 text-foreground hover:text-primary transition-colors"
+              >
+                Главная
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection('about');
+                  setMobileMenuOpen(false);
+                }}
+                className="block w-full text-left py-3 text-foreground hover:text-primary transition-colors"
+              >
+                О бренде
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection('services');
+                  setMobileMenuOpen(false);
+                }}
+                className="block w-full text-left py-3 text-foreground hover:text-primary transition-colors"
+              >
+                Услуги
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection('blog');
+                  setMobileMenuOpen(false);
+                }}
+                className="block w-full text-left py-3 text-foreground hover:text-primary transition-colors"
+              >
+                Блог
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection('contacts');
+                  setMobileMenuOpen(false);
+                }}
+                className="block w-full text-left py-3 text-foreground hover:text-primary transition-colors"
+              >
+                Контакты
+              </button>
+              <Button
+                onClick={() => {
+                  scrollToSection('contacts');
+                  setMobileMenuOpen(false);
+                }}
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                Записаться
+              </Button>
+            </div>
+          </div>
+        )}
       </nav>
 
       <section
@@ -388,8 +459,18 @@ const Index = () => {
               ИП Ирзина Татьяна Васильевна
             </p>
             <p className="text-sm opacity-80">
-              ИНН: 123456789012 | ОГРНИП: 123456789012345
+              ИНН: 701741904354
             </p>
+            <div className="flex justify-center items-center gap-4 pt-2">
+              <div className="flex items-center gap-2">
+                <Icon name="CreditCard" size={18} />
+                <span className="text-sm opacity-80">Терминал</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Icon name="QrCode" size={18} />
+                <span className="text-sm opacity-80">QR-код</span>
+              </div>
+            </div>
             <div className="flex justify-center gap-6 pt-4">
               <Icon name="Instagram" size={24} className="cursor-pointer hover:opacity-80" />
               <Icon name="Phone" size={24} className="cursor-pointer hover:opacity-80" />

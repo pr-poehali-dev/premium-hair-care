@@ -88,7 +88,7 @@ const Index = () => {
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-3xl font-bold text-primary">Премиум Уход</h1>
+            <h1 className="text-3xl font-bold text-primary">Красота By Ирзина</h1>
             <div className="hidden md:flex gap-8">
               <button
                 onClick={() => scrollToSection('home')}
@@ -113,6 +113,12 @@ const Index = () => {
                 className="text-foreground hover:text-primary transition-colors"
               >
                 Блог
+              </button>
+              <button
+                onClick={() => scrollToSection('payment')}
+                className="text-foreground hover:text-primary transition-colors"
+              >
+                Оплата
               </button>
               <button
                 onClick={() => scrollToSection('contacts')}
@@ -177,6 +183,15 @@ const Index = () => {
                 className="block w-full text-left py-3 text-foreground hover:text-primary transition-colors"
               >
                 Блог
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection('payment');
+                  setMobileMenuOpen(false);
+                }}
+                className="block w-full text-left py-3 text-foreground hover:text-primary transition-colors"
+              >
+                Оплата
               </button>
               <button
                 onClick={() => {
@@ -349,6 +364,60 @@ const Index = () => {
         </div>
       </section>
 
+      <section id="payment" className="py-24 bg-secondary">
+        <div className="container mx-auto px-4">
+          <h2 className="text-5xl md:text-6xl font-bold text-center mb-16 animate-fade-in">
+            Оплата услуг
+          </h2>
+          <div className="max-w-2xl mx-auto">
+            <Card className="animate-fade-in">
+              <CardContent className="p-8">
+                <div className="text-center space-y-6">
+                  <div className="flex justify-center">
+                    <Icon name="QrCode" size={64} className="text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold">
+                    Оплатите услуги через QR-код
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Отсканируйте QR-код с помощью камеры телефона или банковского приложения для быстрой оплаты
+                  </p>
+                  <div className="bg-white p-8 rounded-lg inline-block border-2 border-border">
+                    <div className="w-64 h-64 bg-secondary flex items-center justify-center">
+                      <p className="text-center text-muted-foreground px-4">
+                        Здесь будет ваш QR-код для оплаты<br />
+                        <span className="text-sm">(загрузите изображение QR-кода)</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="pt-4 space-y-2">
+                    <p className="text-sm text-muted-foreground">
+                      <strong>Получатель:</strong> ИП Ирзина Татьяна Васильевна
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      <strong>ИНН:</strong> 701741904354
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      <strong>ОГРНИП:</strong> 325700000049408
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-center gap-4 pt-4 border-t border-border">
+                    <div className="flex items-center gap-2">
+                      <Icon name="CreditCard" size={20} className="text-primary" />
+                      <span className="text-sm">Терминал в салоне</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Icon name="Smartphone" size={20} className="text-primary" />
+                      <span className="text-sm">Оплата по QR</span>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       <section id="contacts" className="py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <h2 className="text-5xl md:text-6xl font-bold text-center mb-16 animate-fade-in">
@@ -409,6 +478,21 @@ const Index = () => {
                   </div>
                 </CardContent>
               </Card>
+
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Icon name="FileText" size={24} className="text-primary mt-1" />
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">Реквизиты</h3>
+                      <p className="text-muted-foreground">
+                        ИНН: 701741904354<br />
+                        ОГРНИП: 325700000049408
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             <div>
@@ -456,12 +540,12 @@ const Index = () => {
       <footer className="bg-foreground text-background py-12">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4">
-            <h3 className="text-2xl font-bold">Премиум Уход</h3>
+            <h3 className="text-2xl font-bold">Красота By Ирзина</h3>
             <p className="text-sm opacity-80">
               ИП Ирзина Татьяна Васильевна
             </p>
             <p className="text-sm opacity-80">
-              ИНН: 701741904354
+              ИНН: 701741904354 | ОГРНИП: 325700000049408
             </p>
             <div className="flex justify-center items-center gap-4 pt-2">
               <div className="flex items-center gap-2">
@@ -479,7 +563,7 @@ const Index = () => {
               <Icon name="Mail" size={24} className="cursor-pointer hover:opacity-80" />
             </div>
             <p className="text-xs opacity-60 pt-4">
-              © 2024 Премиум Уход. Все права защищены.
+              © 2024 Красота By Ирзина. Все права защищены.
             </p>
           </div>
         </div>

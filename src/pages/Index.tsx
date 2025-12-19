@@ -37,6 +37,8 @@ const Index = () => {
         { name: 'Глубокое восстановление Olaplex', price: 'от 5 000 ₽' },
         { name: 'Ламинирование', price: 'от 4 500 ₽' },
         { name: 'SPA-уход премиум', price: 'от 7 000 ₽' },
+        { name: 'Комплексный уход за кожей головы', price: 'от 5 500 ₽' },
+        { name: 'Массаж головы', price: 'от 2 000 ₽' },
       ],
     },
     {
@@ -361,7 +363,7 @@ const Index = () => {
                     <div>
                       <h3 className="font-semibold text-lg mb-2">Адрес салона</h3>
                       <p className="text-muted-foreground">
-                        г. Москва, ул. Тверская, д. 1
+                        г. Томск, ул. Киевская, д. 93
                       </p>
                     </div>
                   </div>
@@ -374,7 +376,7 @@ const Index = () => {
                     <Icon name="Phone" size={24} className="text-primary mt-1" />
                     <div>
                       <h3 className="font-semibold text-lg mb-2">Телефон</h3>
-                      <p className="text-muted-foreground">+7 (999) 123-45-67</p>
+                      <p className="text-muted-foreground">+7 (903) 950-36-39</p>
                     </div>
                   </div>
                 </CardContent>
@@ -401,7 +403,7 @@ const Index = () => {
                     <div>
                       <h3 className="font-semibold text-lg mb-2">Email</h3>
                       <p className="text-muted-foreground">
-                        info@premium-uhod.ru
+                        irzinakrasota@mail.ru
                       </p>
                     </div>
                   </div>
